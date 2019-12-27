@@ -8,6 +8,6 @@
     },
     "rules": {
       "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx"] }],
-      "semi": [2, "error"]
+      "semi": [0, "error"]
     }
   }

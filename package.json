@@ -12,7 +12,10 @@
     "publish-demo": "npm run build && npm run deploy",
     "lint": "eslint --debug src/",
     "lint:write": "eslint --debug src/ --fix",
-    "prettier": "prettier --write src/*.js"
+    "prettier": "prettier --write src/*.js",
+    "test": "jest --passWithNoTests",
+    "test:watch": "jest --watch --passWithNoTests",
+    "test:coverage": "jest --coverage --colors --passWithNoTests"
   },
   "keywords": [],
   "author": "",
@@ -24,10 +27,15 @@
   "devDependencies": {
     "@babel/cli": "^7.7.7",
     "@babel/core": "^7.4.0",
+    "@babel/polyfill": "^7.7.0",
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.5",
     "css-loader": "^2.1.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-loader": "^3.0.3",
@@ -35,6 +43,8 @@
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^3.1.0",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.5.0",
     "prettier": "^1.19.1",
     "prettier-webpack-plugin": "^1.2.0",
     "react": "^16.8.5",
@@ -56,7 +66,5 @@
       "git add ."
     ]
   },
-  "dependencies": {
-    "lint-staged": "^9.5.0"
-  }
+  "dependencies": {}
 }

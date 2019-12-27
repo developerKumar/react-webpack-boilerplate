@@ -5,3 +5,4 @@ examples
 webpack.config.js
 dist
 package-lock.json
+coverage
