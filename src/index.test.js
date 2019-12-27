@@ -12,9 +12,16 @@ function setup() {
   return { wrapper, props }
 }
 
-describe('Hello from My Component Test Suite', () => {
+describe('Index has h1 tag ', () => {
   it('Should have a tag', () => {
     const { wrapper } = setup()
     expect(wrapper.find('h1').exists()).toBe(true)
+  })
+})
+
+describe('Index has Hello from My Component text ', () => {
+  it('Should have a tag', () => {
+    const { wrapper } = setup()
+    expect(wrapper.text()).toEqual('Hello from My Component');
   })
 })

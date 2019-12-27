@@ -1,7 +1,7 @@
 {
-  "name": "react_web",
+  "name": "react-webpack-boilerplate",
   "version": "1.0.0",
-  "description": "",
+  "description": "A react js project includes: Linting, Prettier, Webpack, Jest, Enzyme, Babel, husky, lint-stage",
   "main": "lib/index.js",
   "scripts": {
     "start": "webpack-dev-server --open --hot --mode development",
@@ -17,9 +17,9 @@
     "test:watch": "jest --watch --passWithNoTests",
     "test:coverage": "jest --coverage --colors --passWithNoTests"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["react", "eslint", "webpack", "babel", "husky", "enzyme", "jest", "prettier", "lint-stage", "boilerplate", "reactjs", "react-boilerplate", "custom", "npm", "publish", "npm-publish"],
+  "author": "Mukul Kumar",
+  "license": "",
   "peerDependencies": {
     "react": "^16.8.5",
     "react-dom": "^16.8.5"
