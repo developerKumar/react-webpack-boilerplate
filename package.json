@@ -2,27 +2,61 @@
   "name": "react_web",
   "version": "1.0.0",
   "description": "",
-  "main": "webpack.config.js",
+  "main": "lib/index.js",
   "scripts": {
     "start": "webpack-dev-server --open --hot --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "deploy": "gh-pages -d examples/dist",
+    "transpile": "babel src -d lib --copy-files",
+    "prepublishOnly": "npm run transpile",
+    "publish-demo": "npm run build && npm run deploy",
+    "lint": "eslint --debug src/",
+    "lint:write": "eslint --debug src/ --fix",
+    "prettier": "prettier --write src/**/*.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "peerDependencies": {
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5"
+  },
   "devDependencies": {
+    "@babel/cli": "^7.7.7",
     "@babel/core": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
     "css-loader": "^2.1.1",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-loader": "^3.0.3",
+    "gh-pages": "^2.1.1",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^3.1.0",
+    "prettier": "^1.19.1",
+    "prettier-webpack-plugin": "^1.2.0",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "style-loader": "^0.23.1",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run lint"
+    }
+  },
+  "lint-staged": {
+    "*.(js|jsx)": [
+      "npm run lint:write",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "lint-staged": "^9.5.0"
   }
 }

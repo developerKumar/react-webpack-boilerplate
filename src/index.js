@@ -1,9 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import './style.css';
+import React from 'react'
 
-const Index = () => {
-  return <div className="helloworld">Hello React,Webpack4,Babel7!</div>;
-};
-
-ReactDOM.render(<Index />, document.querySelector("#root"));
+const MyComponent = () => <h1>Hello from My Component</h1>
+export default MyComponent
