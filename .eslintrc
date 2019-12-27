@@ -7,7 +7,7 @@
       "commonjs": true
     },
     "rules": {
-      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-      "semi": [0, "never"]
+      "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx"] }],
+      "semi": [2, "error"]
     }
   }

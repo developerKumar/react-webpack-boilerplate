@@ -12,7 +12,7 @@
     "publish-demo": "npm run build && npm run deploy",
     "lint": "eslint --debug src/",
     "lint:write": "eslint --debug src/ --fix",
-    "prettier": "prettier --write src/**/*.js"
+    "prettier": "prettier --write src/*.js"
   },
   "keywords": [],
   "author": "",
@@ -51,9 +51,9 @@
     }
   },
   "lint-staged": {
-    "*.(js|jsx)": [
+    "src/*.(js|jsx)": [
       "npm run lint:write",
-      "git add"
+      "git add ."
     ]
   },
   "dependencies": {

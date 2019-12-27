@@ -1,12 +1,13 @@
 const path = require('path');
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-const PrettierPlugin = require("prettier-webpack-plugin");
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const PrettierPlugin = require('prettier-webpack-plugin');
+
 module.exports = {
-  entry: path.join(__dirname, "examples/src/index.js"),
+  entry: path.join(__dirname, 'examples/src/index.js'),
   output: {
-    path: path.join(__dirname, "examples/dist"),
-    filename: "bundle.js"
-},
+    path: path.join(__dirname, 'examples/dist'),
+    filename: 'bundle.js',
+  },
   module: {
     rules: [
       {
@@ -25,27 +26,27 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
-        }
+          loader: 'babel-loader',
+        },
       },
       {
         test: /\.html$/,
         use: [
           {
-            loader: "html-loader"
-          }
-        ]
+            loader: 'html-loader',
+          },
+        ],
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
-      }
-    ]
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: path.join(__dirname, "examples/src/index.html"),
-      filename: "./index.html"
+      template: path.join(__dirname, 'examples/src/index.html'),
+      filename: './index.html',
     }),
     new PrettierPlugin({
       useTabs: false,
@@ -56,13 +57,13 @@ module.exports = {
       bracketSpacing: true,
       jsxBracketSameLine: true,
       arrowParens: 'avoid',
-      endOfLine: 'lf'
-    })
+      endOfLine: 'lf',
+    }),
   ],
   resolve: {
-      extensions: [".js", ".jsx"]
+    extensions: ['.js', '.jsx'],
   },
   devServer: {
-      port: 3000
-  }
+    port: 3000,
+  },
 };
