@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { withTheme } from 'styled-components';
+import styled from 'styled-components';
 
 function getBorderColor(variant) {
   switch (variant) {
@@ -25,7 +25,7 @@ const StyledButton = styled.button`
   outline: none;
   border-width: 2px;
   border-style: solid;
-  border-color: ${props => getBorderColor(props.variant)};
+  border-color: ${(props) => getBorderColor(props.variant)};
   border-radius: 8px;
   color: rgba(0, 0, 0, 0.96);
   :hover {
@@ -57,6 +57,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
   variant: 'normal',
+  onClick: () => {},
 };
 
 export default Button;

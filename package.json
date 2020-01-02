@@ -92,6 +92,7 @@
     ]
   },
   "dependencies": {
+    "prop-types": "^15.7.2",
     "styled-components": "^4.4.1"
   }
 }
