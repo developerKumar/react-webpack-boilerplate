@@ -8,6 +8,7 @@
     },
     "rules": {
       "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx"] }],
-      "semi": [0, "error"]
+      "semi": [0, "error"],
+      "react/jsx-props-no-spreading": 0
     }
   }
